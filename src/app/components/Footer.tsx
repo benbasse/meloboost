@@ -1,5 +1,5 @@
-import { motion } from "motion/react";
 import { Zap, Mail, Phone, MapPin, Instagram, Youtube, Twitter, Linkedin, Facebook } from "lucide-react";
+import { useContactModal } from "../context/ContactModalContext";
 
 const footerLinks = {
   navigation: [
@@ -18,9 +18,9 @@ const footerLinks = {
     { label: "Vidéo promotionnelle", href: "#services" },
   ],
   contact: [
-    { icon: Mail, label: "contact@meloboost.com" },
-    { icon: Phone, label: "+225 07 00 00 00 00" },
-    { icon: MapPin, label: "Abidjan, Côte d'Ivoire" },
+    { icon: Mail, label: "Boubacardiouf425@gmail.com" },
+    { icon: Phone, label: "+221 77 422 43 01" },
+    { icon: MapPin, label: "Dakar, Sénégal" },
   ],
 };
 
@@ -33,6 +33,8 @@ const socials = [
 ];
 
 export function Footer() {
+  const { openModal } = useContactModal();
+
   const handleNav = (href: string) => {
     const el = document.querySelector(href);
     if (el) el.scrollIntoView({ behavior: "smooth" });
@@ -164,7 +166,7 @@ export function Footer() {
 
             {/* CTA mini */}
             <button
-              onClick={() => handleNav("#contact")}
+              onClick={openModal}
               className="mt-6 w-full py-3 rounded-xl bg-gradient-to-r from-[#2B4B9B]/20 to-[#68C5DC]/20 border border-[#2B4B9B]/20 text-white/70 hover:text-white hover:border-[#68C5DC]/40 transition-all duration-300"
               style={{ fontFamily: "'Inter', sans-serif", fontWeight: 600, fontSize: "0.85rem" }}
             >

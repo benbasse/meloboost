@@ -1,9 +1,12 @@
 import { motion } from "motion/react";
 import { ArrowRight, Play, ChevronDown } from "lucide-react";
+import { useContactModal } from "../context/ContactModalContext";
 
 const heroImage = "/images/hero-background.jpg";
 
 export function Hero() {
+  const { openModal } = useContactModal();
+
   const handleNav = (href: string) => {
     const el = document.querySelector(href);
     if (el) el.scrollIntoView({ behavior: "smooth" });
@@ -107,7 +110,7 @@ export function Hero() {
           className="flex flex-col sm:flex-row gap-4 justify-center mb-20"
         >
           <button
-            onClick={() => handleNav("#contact")}
+            onClick={openModal}
             className="group relative inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full text-white overflow-hidden"
             style={{ fontFamily: "'Inter', sans-serif", fontWeight: 600, fontSize: "0.95rem" }}
           >

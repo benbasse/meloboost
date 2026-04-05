@@ -1,13 +1,11 @@
 import { motion } from "motion/react";
 import { ArrowRight, MessageCircle } from "lucide-react";
+import { useContactModal } from "../context/ContactModalContext";
 
 const abstractImage = "https://images.unsplash.com/photo-1771873680097-7506773a2b02?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMGRhcmslMjBncmFkaWVudCUyMGRpZ2l0YWwlMjBhcnQlMjBwdXJwbGUlMjBvcmFuZ2V8ZW58MXx8fHwxNzc1MDg1OTg0fDA&ixlib=rb-4.1.0&q=80&w=1080";
 
 export function CTA() {
-  const handleNav = (href: string) => {
-    const el = document.querySelector(href);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
-  };
+  const { openModal } = useContactModal();
 
   return (
     <section id="contact" className="py-32 relative overflow-hidden">
@@ -101,9 +99,7 @@ export function CTA() {
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
           <button
-            onClick={() => {
-              window.location.href = "mailto:contact@meloboost.com?subject=Demande de devis";
-            }}
+            onClick={openModal}
             className="group relative inline-flex items-center justify-center gap-2 px-10 py-4 rounded-full text-white overflow-hidden shadow-[0_0_40px_rgba(43,75,155,0.35)] hover:shadow-[0_0_60px_rgba(104,197,220,0.4)] transition-shadow duration-500"
             style={{ fontFamily: "'Inter', sans-serif", fontWeight: 600, fontSize: "1rem" }}
           >
@@ -115,7 +111,7 @@ export function CTA() {
 
           <button
             onClick={() => {
-              window.location.href = "mailto:contact@meloboost.com";
+              window.location.href = "mailto:Boubacardiouf425@gmail.com";
             }}
             className="group inline-flex items-center justify-center gap-2 px-10 py-4 rounded-full border border-white/15 bg-white/5 backdrop-blur-sm text-white hover:bg-white/10 hover:border-white/25 transition-all duration-300"
             style={{ fontFamily: "'Inter', sans-serif", fontWeight: 600, fontSize: "1rem" }}

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Menu, X } from "lucide-react";
+import { useContactModal } from "../context/ContactModalContext";
 
 const navLinks = [
   { label: "Accueil", href: "#accueil" },
@@ -14,6 +15,7 @@ const navLinks = [
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const { openModal } = useContactModal();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 30);
@@ -67,7 +69,7 @@ export function Navbar() {
           {/* CTA Button */}
           <div className="hidden lg:block">
             <button
-              onClick={() => handleNav("#contact")}
+              onClick={openModal}
               className="relative px-6 py-2.5 rounded-full text-white overflow-hidden group"
               style={{ fontFamily: "'Inter', sans-serif", fontWeight: 600, fontSize: "0.875rem" }}
             >
@@ -109,7 +111,10 @@ export function Navbar() {
                 </button>
               ))}
               <button
-                onClick={() => handleNav("#contact")}
+                onClick={() => {
+                  setMenuOpen(false);
+                  openModal();
+                }}
                 className="mt-2 px-6 py-3 rounded-full text-white bg-gradient-to-r from-[#2B4B9B] to-[#68C5DC] text-center"
                 style={{ fontFamily: "'Inter', sans-serif", fontWeight: 600 }}
               >
