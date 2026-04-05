@@ -111,7 +111,7 @@ export function CTA() {
 
           <button
             onClick={() => {
-              window.location.href = "mailto:Boubacardiouf425@gmail.com";
+              window.open("https://wa.me/221774224301?text=Bonjour,%20je%20souhaite%20en%20savoir%20plus%20sur%20vos%20services", "_blank");
             }}
             className="group inline-flex items-center justify-center gap-2 px-10 py-4 rounded-full border border-white/15 bg-white/5 backdrop-blur-sm text-white hover:bg-white/10 hover:border-white/25 transition-all duration-300"
             style={{ fontFamily: "'Inter', sans-serif", fontWeight: 600, fontSize: "1rem" }}

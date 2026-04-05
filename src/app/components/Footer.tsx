@@ -1,4 +1,4 @@
-import { Zap, Mail, Phone, MapPin, Instagram, Youtube, Twitter, Linkedin, Facebook } from "lucide-react";
+import { Mail, Phone, MapPin, Instagram, Youtube, Twitter, Linkedin, Facebook } from "lucide-react";
 import { useContactModal } from "../context/ContactModalContext";
 
 const footerLinks = {
@@ -53,15 +53,11 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <button onClick={() => handleNav("#accueil")} className="flex items-center gap-2 mb-6 group">
-              <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-[#2B4B9B] to-[#68C5DC] flex items-center justify-center shadow-[0_0_20px_rgba(43,75,155,0.4)] group-hover:shadow-[0_0_30px_rgba(104,197,220,0.4)] transition-all duration-300">
-                <Zap className="w-5 h-5 text-white fill-white" />
-              </div>
-              <span
-                className="text-white"
-                style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: "1.2rem", letterSpacing: "-0.02em" }}
-              >
-                Melo<span className="bg-gradient-to-r from-[#2B4B9B] to-[#68C5DC] bg-clip-text text-transparent">boost</span>
-              </span>
+              <img
+                src="/images/logo_blanc.png"
+                alt="Meloboost Logo"
+                className="h-24 w-auto transition-all duration-300 group-hover:scale-105"
+              />
             </button>
 
             <p
