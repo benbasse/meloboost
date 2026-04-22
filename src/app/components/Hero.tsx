@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { ArrowRight, Play, ChevronDown } from "lucide-react";
+import { ArrowRight, ChevronDown } from "lucide-react";
 import { useContactModal } from "../context/ContactModalContext";
 
 const heroImage = "/images/hero-background.jpg";
@@ -125,9 +125,6 @@ export function Hero() {
             className="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border border-white/20 bg-white/5 backdrop-blur-sm text-white hover:bg-white/10 transition-all duration-300"
             style={{ fontFamily: "'Inter', sans-serif", fontWeight: 600, fontSize: "0.95rem" }}
           >
-            <div className="w-8 h-8 rounded-full bg-gradient-to-r from-[#2B4B9B] to-[#68C5DC] flex items-center justify-center">
-              <Play className="w-3 h-3 text-white fill-white" />
-            </div>
             Voir nos réalisations
           </button>
         </motion.div>

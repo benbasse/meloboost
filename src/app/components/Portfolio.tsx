@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Play } from "lucide-react";
 
 const podcastImage = "/images/podcast-studio.jpg";
 const videoImage = "/images/video-production.jpg";
@@ -198,14 +197,6 @@ export function Portfolio() {
                   {project.category}
                 </div>
 
-                {/* Play button for videos */}
-                {project.type === "video" && (
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="w-14 h-14 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center">
-                      <Play className="w-6 h-6 text-white fill-white ml-1" />
-                    </div>
-                  </div>
-                )}
 
                 {/* Info */}
                 <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
