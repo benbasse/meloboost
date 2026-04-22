@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { ExternalLink, Play } from "lucide-react";
+import { Play } from "lucide-react";
 
 const podcastImage = "/images/podcast-studio.jpg";
 const videoImage = "/images/video-production.jpg";
@@ -175,7 +175,7 @@ export function Portfolio() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
-                className={`group relative rounded-2xl overflow-hidden cursor-pointer ${
+                className={`group relative rounded-2xl overflow-hidden ${
                   project.size === "large"
                     ? "col-span-2 row-span-2"
                     : "col-span-1 row-span-1"
@@ -222,7 +222,6 @@ export function Portfolio() {
                     >
                       {project.impact}
                     </span>
-                    <ExternalLink className="w-4 h-4 text-white/50 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </div>
                 </div>
               </motion.div>
